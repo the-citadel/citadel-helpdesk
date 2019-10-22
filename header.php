@@ -27,9 +27,7 @@
 	<header id="masthead" class="site-header">
 		<div class="wrapper">
 			<div class="site-branding">
-				<?php
-				if ( is_front_page() || is_home() ) :
-					?>
+				<?php if ( is_front_page() || is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php
 				else :
@@ -37,11 +35,7 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php
 				endif;
-				$citadel_doc_description = get_bloginfo( 'description', 'display' );
-				if ( $citadel_doc_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo $citadel_doc_description; /* WPCS: xss ok. */ ?></p>
-				<?php endif; ?>
+				?>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">
@@ -56,19 +50,20 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div id="search" class="<?php if ( !is_front_page() && !is_home() ) { echo 'collapsed'; } ?>">
+	<div id="search" class="<?php if ( !is_front_page() && !is_home() ) { echo 'collapsed'; } ?> sticky">
 
 		<div class="wrapper">
 			
 			<?php if ( !is_front_page() && !is_home() ) : ?>
 
-			<div class="breadcrumbs">
-				<?php // get_breadcrumbs(); ?>
-			</div>
+			<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
 
 			<?php endif; ?>
 
 			<div class="main-search">
+				<?php if ( is_front_page() || is_home() ) : ?>
+				<!-- <h2>What can we help with?</h2> -->
+				<?php endif; ?>
 				<?php echo get_search_form(); ?>
 			</div>
 

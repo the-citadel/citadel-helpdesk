@@ -1,0 +1,96 @@
+.ticket-stats {
+	margin: 0 0 .5rem;
+	font-size: .8rem;
+
+	span {
+		margin-left: .25rem;
+	}
+}
+
+.ticket-details {
+	max-width: 350px;
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+
+		th,
+		td {
+			border: 1px solid $pt_barracks;
+			padding: 5px;
+		}
+	}	
+}
+
+#ticketTable {
+	border-collapse: collapse;
+	width: 100%;
+
+	thead,
+	tbody {
+
+		tr {
+
+			&.active {
+				background-color: $band_gold_20;
+			}
+
+			&:nth-child(even) {
+				background-color: $pt_barracks_20;
+			}
+
+			&.resolved,
+			&.closed {
+				color: $shako_40;
+
+				a {
+					color: $shako_40;
+				}
+			}
+		}
+
+		th,
+		td {
+			border: 1px solid $pt_barracks;
+			padding: 5px;
+			text-align: center;
+
+			select {
+				width: 100%;
+			}
+
+			&.edited {
+				background-color: $band_gold_20;
+			}
+		}
+	}
+
+	thead {
+		background-color: $citadel_blue;
+		color: #ffffff;
+	}
+
+	button {
+		width: 100%;
+		display: none;
+		text-align: center;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	.number {
+		min-width: 70px;
+	}
+
+	.date {
+		min-width: 100px;
+	}
+
+	.subject {
+		min-width: 250px;
+	}
+
+	.status {
+		min-width: 100px;
+	}
+}
