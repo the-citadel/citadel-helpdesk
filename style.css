@@ -490,7 +490,8 @@ table {
       font-size: 1.5rem;
       font-weight: 500;
       color: #ffffff;
-      text-decoration: none; }
+      text-decoration: none;
+      display: block; }
 
 #search {
   background-color: #3975B7; }
@@ -527,7 +528,7 @@ table {
       max-width: 600px;
       border-radius: 50px;
       font-size: 1.25rem;
-      padding: .71rem 1.42rem; }
+      padding: .71rem 2.84rem; }
     #search .main-search input[type="submit"] {
       position: absolute;
       left: -9999999px; }
